@@ -1,7 +1,7 @@
 <?php
 
 # switch
-printf("\nswitch\n");
+printf("\n-------------switch\n");
 $paymentStatus = 1;
 
 switch ($paymentStatus) {
@@ -16,7 +16,7 @@ switch ($paymentStatus) {
 }
 
 # match
-printf("\nmatch\n");
+printf("\n-------------match\n");
 $paymentStatus_2 = "2"; # it is a string !
 
 $message = match ($paymentStatus_2) {
@@ -28,7 +28,7 @@ $message = match ($paymentStatus_2) {
 printf("Second payment status: $message");
 
 # functions
-printf("\nfunctions\n");
+printf("\n-------------functions\n");
 function getStatus($paymentStatus_2): void
 {
     $message = match ($paymentStatus_2) {
@@ -43,16 +43,16 @@ function getStatus($paymentStatus_2): void
 getStatus(2);
 
 # loops
-printf("\nloops\n");
+printf("\n-------------loops\n");
 
-printf("\nwhile loop\n");
+printf("\n-------------while loop\n");
 $a = 1;
 do {    # "do" makes loop runs at least once
     echo $a . "\n";
     $a++;
 } while ($a <= 15);
 
-printf("\nfor loop\n");
+printf("\n-------------for loop\n");
 for ($i = 0; $i <= 15; $i += 2) {
     if ($i == 6) {
         break;
@@ -60,10 +60,17 @@ for ($i = 0; $i <= 15; $i += 2) {
     printf("$i\n");
 }
 
-printf("\nforeach loop through an array\n");
+printf("\n-------------foreach loop through an array\n");
 $names = ["John", "Jane", "Bob"];
 
-foreach ($names as $name) {
-    printf($name . "\n");
+foreach ($names as $key => $name) {     # $key - index
+    printf($key . ") " . $name . "\n");
 }
-printf($name);  # в эту переменную будут сохраняться итеративно те элементы, которые перебираются через массив
+printf($name);      # в эту переменную будет сохраняться итеративно элемент, который перебирался через массив, и выведется последний
+
+printf("\n-------------for loop through an array\n");
+$names = ["John", "Jane", "Bob"];
+
+for ($i = 0; $i < count($names); $i++) {
+    printf($names[$i] . "\n");
+}
