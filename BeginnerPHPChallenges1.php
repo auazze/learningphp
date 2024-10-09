@@ -3,14 +3,16 @@
 # 1. Create function for accepting the color as string.
 # 2. Create an array resistor colors with their relative numeric code.
 # 3. Return a numeric code based on the color's name.
-function colorCode(string $color): int {
+
+# Как сделал препод
+function colorCodeTeacher(string $color): int {
     $array_color = ["black" => 0, "brown" => 1, "red" => 2, "orange" => 3, "yellow" => 4, "green" => 5, "blue" => 6, "violet" => 7, "grey" => 8, "white" => 9];
 
     return $array_color[$color];
 }
-printf(colorCode("red"));
+printf(colorCodeTeacher("red"));
 
-# or
+# Что предложила Леа
 printf("\n--------------------------\n");
 function colorCode2(string $color2): int {
     $array_color2 = ["black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"];
