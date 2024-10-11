@@ -19,7 +19,17 @@ function sum(bool $dumpArr, int|float ...$nums)  # ... - accepting unlimited arg
 # and now u can add as many args as u want
 printf(sum(false,5, 2, 6, 9, 123));
 
-
-# global variables
+# static variables
 printf("\n--------------------------\n");
+
+function foo()
+{
+    static $a = 1;  # with static $a = 1; it will be 1 2 3
+                    # increment will not be used without "static"
+    return $a++;    # just $a = 1; it will be 1 1 1
+}
+
+echo foo() . "\n";  # invoking function with concatenation (.) and string ("\n")
+echo foo() . "\n";
+echo foo() . "\n";
 
